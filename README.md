@@ -21,13 +21,13 @@ Everything is hidden until you need it, visible only on hover.
 
 <br/><br/>
 
-<img src="imgs/prompt.png" alt="Prompt" width="600" />
+<img src="imgs/prompt.png" alt="Prompt" />
 <br/>
 <sup>Prompt</sup>
 
 <br/><br/>
 
-<img src="imgs/settings.png" alt="Settings" width="600" />
+<img src="imgs/settings.png" alt="Settings" />
 <br/>
 <sup>Settings</sup>
 
