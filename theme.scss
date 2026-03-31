@@ -1,0 +1,149 @@
+$transparent: transparent !important;
+$none: none !important;
+$zero: 0 !important;
+$one: 1 !important;
+$size-1: var(--size-4-1) !important;
+$size-2: var(--size-4-2) !important;
+$size-4: var(--size-4-4) !important;
+$size-8: var(--size-4-8) !important;
+$size-10: var(--size-4-10) !important;
+$size-16: var(--size-4-16) !important;
+$color-base-30: var(--color-base-30) !important;
+$scrollbar-width: 0;
+$fade-in-duration: 0.35s;
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body {
+  --scrollbar-width: $scrollbar-width;
+}
+
+// I. Completely hide
+.empty-state-container,
+.titlebar-button-container.mod-right, // Window control buttons
+.modal-close-button,
+.search-input-clear-button,
+.search-empty-state,
+.sidebar-toggle-button,
+.prompt-instructions,
+.workspace-drawer-vault-actions, // "Help" & "Settings" buttons
+.workspace-tab-header-container::after,
+.workspace-tab-header-inner::after,
+.workspace-tab-header-inner-close-button,
+.workspace-tab-header-tab-list,
+.workspace-tab-header-new-tab,
+.workspace-tab-header-spacer {
+  display: $none;
+}
+
+// II. Decorators
+// Remove border
+.community-modal-search-results-wrapper,
+.modal,
+.prompt,
+.prompt-input,
+.vertical-tab-header,
+.workspace-tab-header-container,
+.workspace-sidedock-vault-profile {
+  border: $none;
+}
+// Flatten dropdown
+select.dropdown {
+  box-shadow: $none;
+}
+// Hide resize handler
+.workspace-leaf-resize-handle {
+  opacity: $zero;
+}
+// Tab header
+.workspace-tab-header {
+  box-shadow: $none;
+  padding-top: $zero;
+  &.is-active {
+    background-color: $transparent;
+    &::before,
+    &::after {
+      opacity: $zero;
+    }
+    .workspace-tab-header-inner {
+      background-color: $color-base-30;
+    }
+  }
+}
+
+// III. Alignment
+.workspace-tab-header-container {
+  height: $size-16;
+  padding-left: $size-4;
+  padding-right: $size-4;
+  justify-content: center;
+  & * {
+    min-width: $size-8;
+    max-width: $none;
+  }
+}
+.workspace-tab-header-container-inner {
+  margin-top: $zero;
+  padding-top: $size-2;
+  padding-bottom: $size-2;
+}
+.workspace-tab-header-inner {
+  height: $size-10;
+}
+.metadata-property-key {
+  align-items: center;
+}
+.workspace-tab-header-inner-title {
+  padding-left: $size-2;
+  padding-right: $size-2;
+}
+.prompt-input {
+  padding-top: $size-8;
+}
+.prompt {
+  top: 160px;
+}
+.status-bar {
+  border: $none;
+  border-radius: $zero;
+  margin: $size-1;
+  padding: $size-1;
+  min-width: 300px;
+}
+
+// IV. Colors
+.status-bar,
+.workspace-split.mod-horizontal.mod-sidedock,
+.workspace-sidedock-vault-profile,
+.workspace-tab-header-container,
+.workspace-leaf {
+  background-color: $transparent;
+}
+
+// V. Transitions
+.titlebar-button-container,
+.nav-header,
+.status-bar,
+.workspace-tab-header-container,
+.workspace-sidedock-vault-profile {
+  opacity: $zero;
+  transition: opacity $fade-in-duration;
+  &:hover {
+    opacity: $one;
+  }
+}
+.workspace-tab-header-container:has(.mod-right) {
+  opacity: $one;
+}
+
+// VI. Animations
+.modal-container {
+  animation: appear $fade-in-duration;
+}

@@ -1,105 +1,138 @@
-/* Window control buttons ================================================== */
-.titlebar-button-container.mod-right {
-  display: none !important;
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-.workspace-tab-header-container {
-  border: none;
-  padding-right: var(--size-4-2) !important;
+body {
+  --scrollbar-width: $scrollbar-width;
 }
 
-/* Decorators ============================================================== */
+.empty-state-container,
+.titlebar-button-container.mod-right,
+.modal-close-button,
+.search-input-clear-button,
+.search-empty-state,
+.sidebar-toggle-button,
+.prompt-instructions,
+.workspace-drawer-vault-actions,
+.workspace-tab-header-container::after,
+.workspace-tab-header-inner::after,
+.workspace-tab-header-inner-close-button,
+.workspace-tab-header-tab-list,
+.workspace-tab-header-new-tab,
+.workspace-tab-header-spacer {
+  display: none !important;
+}
+
+.community-modal-search-results-wrapper,
+.modal,
+.prompt,
+.prompt-input,
+.vertical-tab-header,
+.workspace-tab-header-container,
 .workspace-sidedock-vault-profile {
   border: none !important;
 }
+
+select.dropdown {
+  box-shadow: none !important;
+}
+
+.workspace-leaf-resize-handle {
+  opacity: 0 !important;
+}
+
 .workspace-tab-header {
   box-shadow: none !important;
   padding-top: 0 !important;
-
-  &.is-active {
-    background-color: transparent !important;
-  }
-  &.is-active::before,
-  &.is-active::after {
-    opacity: 0;
-  }
-  &.is-active .workspace-tab-header-inner {
-    background-color: var(--color-base-30) !important;
-  }
 }
-.status-bar {
-  border: none;
-  border-radius: var(--size-4-1);
-  margin: var(--size-4-2);
-  background-color: transparent;
+.workspace-tab-header.is-active {
+  background-color: transparent !important;
+}
+.workspace-tab-header.is-active::before, .workspace-tab-header.is-active::after {
+  opacity: 0 !important;
+}
+.workspace-tab-header.is-active .workspace-tab-header-inner {
+  background-color: var(--color-base-30) !important;
 }
 
-/* Alignment =============================================================== */
 .workspace-tab-header-container {
   height: var(--size-4-16) !important;
+  padding-left: var(--size-4-4) !important;
+  padding-right: var(--size-4-4) !important;
   justify-content: center;
-
-  & * {
-    min-width: var(--size-4-8);
-    max-width: none !important;
-    /* flex-grow: 1; */
-  }
 }
+.workspace-tab-header-container * {
+  min-width: var(--size-4-8) !important;
+  max-width: none !important;
+}
+
 .workspace-tab-header-container-inner {
   margin-top: 0 !important;
   padding-top: var(--size-4-2) !important;
   padding-bottom: var(--size-4-2) !important;
 }
+
 .workspace-tab-header-inner {
-  /* height: var(--size-4-10) !important; */
+  height: var(--size-4-10) !important;
 }
 
-/* Color =================================================================== */
+.metadata-property-key {
+  align-items: center;
+}
+
+.workspace-tab-header-inner-title {
+  padding-left: var(--size-4-2) !important;
+  padding-right: var(--size-4-2) !important;
+}
+
+.prompt-input {
+  padding-top: var(--size-4-8) !important;
+}
+
+.prompt {
+  top: 160px;
+}
+
+.status-bar {
+  border: none !important;
+  border-radius: 0 !important;
+  margin: var(--size-4-1) !important;
+  padding: var(--size-4-1) !important;
+  min-width: 300px;
+}
+
+.status-bar,
 .workspace-split.mod-horizontal.mod-sidedock,
 .workspace-sidedock-vault-profile,
 .workspace-tab-header-container,
 .workspace-leaf {
   background-color: transparent !important;
 }
-.workspace-leaf-resize-handle {
-  opacity: 0 !important;
-}
 
-/* Hide forever ============================================================ */
-.workspace-tab-header-inner::after {
-  opacity: 0;
-}
-.workspace-tab-header-new-tab,
-.workspace-tab-header-tab-list,
-.workspace-tab-header-container::after,
-.workspace-tab-header-spacer,
-.search-empty-state,
-.sidebar-toggle-button {
-  display: none !important;
-}
-
-/* Reveal on hover ========================================================= */
-.workspace-tab-header-inner-close-button,
-.workspace-sidedock-vault-profile,
-.workspace-tab-header-container,
 .titlebar-button-container,
-.nav-header {
+.nav-header,
+.status-bar,
+.workspace-tab-header-container,
+.workspace-sidedock-vault-profile {
   opacity: 0 !important;
-  transition: opacity 0.65s;
-
-  &:hover {
-    opacity: 1 !important;
-  }
+  transition: opacity 0.35s;
+}
+.titlebar-button-container:hover,
+.nav-header:hover,
+.status-bar:hover,
+.workspace-tab-header-container:hover,
+.workspace-sidedock-vault-profile:hover {
+  opacity: 1 !important;
 }
 
 .workspace-tab-header-container:has(.mod-right) {
   opacity: 1 !important;
 }
 
-.cm-scroller {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
+.modal-container {
+  animation: appear 0.35s;
+}/*# sourceMappingURL=theme.css.map */
