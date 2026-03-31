@@ -74,24 +74,23 @@ body {
 }
 
 .workspace-tab-header-container {
-  height: var(--size-4-16);
-  padding-left: var(--size-4-4);
-  padding-right: var(--size-4-4);
+  height: var(--size-4-16) !important;
+  padding-top: var(--size-4-2) !important;
+  padding-left: var(--size-4-4) !important;
+  padding-right: var(--size-4-4) !important;
   justify-content: center;
 }
 .workspace-tab-header-container * {
-  min-width: var(--size-4-8);
-  max-width: none !important;
+  min-width: var(--size-4-8) !important;
+  max-width: unset;
 }
 
 .workspace-tab-header-container-inner {
   margin-top: 0 !important;
-  padding-top: var(--size-4-2);
-  padding-bottom: var(--size-4-2);
 }
 
 .workspace-tab-header-inner {
-  height: var(--size-4-10);
+  height: var(--size-4-10) !important;
 }
 
 .metadata-property-key {
@@ -99,12 +98,12 @@ body {
 }
 
 .workspace-tab-header-inner-title {
-  padding-left: var(--size-4-2);
-  padding-right: var(--size-4-2);
+  padding-left: var(--size-4-2) !important;
+  padding-right: var(--size-4-2) !important;
 }
 
 .prompt-input {
-  padding-top: var(--size-4-8);
+  padding-top: var(--size-4-8) !important;
 }
 
 .prompt {
@@ -114,13 +113,13 @@ body {
 .status-bar {
   border: none !important;
   border-radius: 0 !important;
-  padding: var(--size-4-2);
+  padding: var(--size-4-2) !important;
   min-width: 300px;
 }
 
 .status-bar-item {
-  padding-left: var(--size-4-2);
-  padding-right: var(--size-4-2);
+  padding-left: var(--size-4-2) !important;
+  padding-right: var(--size-4-2) !important;
 }
 
 .status-bar,
