@@ -7,10 +7,17 @@
   }
 }
 body {
-  --scrollbar-width: $scrollbar-width;
+  --scrollbar-width: 0;
+  --border-width: 0;
+  --radius-s: 7px;
+  --radius-m: 9px;
+  --radius-l: 11px;
+  --radius-xl: 13px;
+  --button-radius: 7px;
 }
 
 .empty-state-container,
+.tag-pane-empty,
 .titlebar-button-container.mod-right,
 .modal-close-button,
 .search-input-clear-button,
@@ -27,18 +34,25 @@ body {
   display: none !important;
 }
 
-.community-modal-search-results-wrapper,
-.modal,
-.prompt,
-.prompt-input,
-.vertical-tab-header,
+.cm-scroller {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+.cm-scroller::-webkit-scrollbar {
+  display: none !important;
+}
+
 .workspace-tab-header-container,
 .workspace-sidedock-vault-profile {
   border: none !important;
 }
 
-select.dropdown {
-  box-shadow: none !important;
+.community-item {
+  border: none !important;
+  background: var(--color-base-20);
+}
+.community-item:hover {
+  background: var(--color-base-30);
 }
 
 .workspace-leaf-resize-handle {
@@ -56,28 +70,28 @@ select.dropdown {
   opacity: 0 !important;
 }
 .workspace-tab-header.is-active .workspace-tab-header-inner {
-  background-color: var(--color-base-30) !important;
+  background-color: var(--color-base-30);
 }
 
 .workspace-tab-header-container {
-  height: var(--size-4-16) !important;
-  padding-left: var(--size-4-4) !important;
-  padding-right: var(--size-4-4) !important;
+  height: var(--size-4-16);
+  padding-left: var(--size-4-4);
+  padding-right: var(--size-4-4);
   justify-content: center;
 }
 .workspace-tab-header-container * {
-  min-width: var(--size-4-8) !important;
+  min-width: var(--size-4-8);
   max-width: none !important;
 }
 
 .workspace-tab-header-container-inner {
   margin-top: 0 !important;
-  padding-top: var(--size-4-2) !important;
-  padding-bottom: var(--size-4-2) !important;
+  padding-top: var(--size-4-2);
+  padding-bottom: var(--size-4-2);
 }
 
 .workspace-tab-header-inner {
-  height: var(--size-4-10) !important;
+  height: var(--size-4-10);
 }
 
 .metadata-property-key {
@@ -85,12 +99,12 @@ select.dropdown {
 }
 
 .workspace-tab-header-inner-title {
-  padding-left: var(--size-4-2) !important;
-  padding-right: var(--size-4-2) !important;
+  padding-left: var(--size-4-2);
+  padding-right: var(--size-4-2);
 }
 
 .prompt-input {
-  padding-top: var(--size-4-8) !important;
+  padding-top: var(--size-4-8);
 }
 
 .prompt {
@@ -100,9 +114,13 @@ select.dropdown {
 .status-bar {
   border: none !important;
   border-radius: 0 !important;
-  margin: var(--size-4-1) !important;
-  padding: var(--size-4-1) !important;
+  padding: var(--size-4-2);
   min-width: 300px;
+}
+
+.status-bar-item {
+  padding-left: var(--size-4-2);
+  padding-right: var(--size-4-2);
 }
 
 .status-bar,

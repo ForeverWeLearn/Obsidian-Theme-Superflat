@@ -2,14 +2,6 @@ $transparent: transparent !important;
 $none: none !important;
 $zero: 0 !important;
 $one: 1 !important;
-$size-1: var(--size-4-1) !important;
-$size-2: var(--size-4-2) !important;
-$size-4: var(--size-4-4) !important;
-$size-8: var(--size-4-8) !important;
-$size-10: var(--size-4-10) !important;
-$size-16: var(--size-4-16) !important;
-$color-base-30: var(--color-base-30) !important;
-$scrollbar-width: 0;
 $fade-in-duration: 0.35s;
 
 @keyframes appear {
@@ -22,11 +14,18 @@ $fade-in-duration: 0.35s;
 }
 
 body {
-  --scrollbar-width: $scrollbar-width;
+  --scrollbar-width: 0;
+  --border-width: 0;
+  --radius-s: 7px;
+  --radius-m: 9px;
+  --radius-l: 11px;
+  --radius-xl: 13px;
+  --button-radius: 7px;
 }
 
 // I. Completely hide
 .empty-state-container,
+.tag-pane-empty,
 .titlebar-button-container.mod-right, // Window control buttons
 .modal-close-button,
 .search-input-clear-button,
@@ -42,21 +41,27 @@ body {
 .workspace-tab-header-spacer {
   display: $none;
 }
+// Editor scrollbar
+.cm-scroller {
+  scrollbar-width: $none;
+  -ms-overflow-style: $none;
+  &::-webkit-scrollbar {
+    display: $none;
+  }
+}
 
 // II. Decorators
 // Remove border
-.community-modal-search-results-wrapper,
-.modal,
-.prompt,
-.prompt-input,
-.vertical-tab-header,
 .workspace-tab-header-container,
 .workspace-sidedock-vault-profile {
   border: $none;
 }
-// Flatten dropdown
-select.dropdown {
-  box-shadow: $none;
+.community-item {
+  border: $none;
+  background: var(--color-base-20);
+  &:hover {
+    background: var(--color-base-30);
+  }
 }
 // Hide resize handler
 .workspace-leaf-resize-handle {
@@ -73,39 +78,39 @@ select.dropdown {
       opacity: $zero;
     }
     .workspace-tab-header-inner {
-      background-color: $color-base-30;
+      background-color: var(--color-base-30);
     }
   }
 }
 
 // III. Alignment
 .workspace-tab-header-container {
-  height: $size-16;
-  padding-left: $size-4;
-  padding-right: $size-4;
+  height: var(--size-4-16);
+  padding-left: var(--size-4-4);
+  padding-right: var(--size-4-4);
   justify-content: center;
   & * {
-    min-width: $size-8;
+    min-width: var(--size-4-8);
     max-width: $none;
   }
 }
 .workspace-tab-header-container-inner {
   margin-top: $zero;
-  padding-top: $size-2;
-  padding-bottom: $size-2;
+  padding-top: var(--size-4-2);
+  padding-bottom: var(--size-4-2);
 }
 .workspace-tab-header-inner {
-  height: $size-10;
+  height: var(--size-4-10);
 }
 .metadata-property-key {
   align-items: center;
 }
 .workspace-tab-header-inner-title {
-  padding-left: $size-2;
-  padding-right: $size-2;
+  padding-left: var(--size-4-2);
+  padding-right: var(--size-4-2);
 }
 .prompt-input {
-  padding-top: $size-8;
+  padding-top: var(--size-4-8);
 }
 .prompt {
   top: 160px;
@@ -113,9 +118,12 @@ select.dropdown {
 .status-bar {
   border: $none;
   border-radius: $zero;
-  margin: $size-1;
-  padding: $size-1;
+  padding: var(--size-4-2);
   min-width: 300px;
+}
+.status-bar-item {
+  padding-left: var(--size-4-2);
+  padding-right: var(--size-4-2);
 }
 
 // IV. Colors
