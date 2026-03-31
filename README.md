@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./icon.svg" width="80%" />
+<img src="imgs/superflat.svg" width="80%" />
 
 *An Obsidian theme built on the philosophy of nothingness.*
 
