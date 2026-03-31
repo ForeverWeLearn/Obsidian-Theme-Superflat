@@ -3,8 +3,20 @@
 </h3>
 
 <p align="center">
-  <img src="imgs/theme.png" alt="Nothing Theme Preview" width="90%"/></br>
+  <img src="imgs/theme.png" alt="Nothing Theme Preview" /></br>
   <sup>Obsidian Theme Superflat</sup>
+</p>
+
+&nbsp;
+
+<p align="center">
+  <img src="imgs/prompt.png" alt="Propmt" /></br>
+  <sup>Prompt</sup>
+</p>
+
+<p align="center">
+  <img src="imgs/settings.png" alt="Settings" /></br>
+  <sup>Settings</sup>
 </p>
 
 &nbsp;
