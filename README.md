@@ -2,7 +2,7 @@
 
 <img src="imgs/superflat.svg" width="80%" />
 
-*An Obsidian theme built on the philosophy of nothingness.*
+*An Obsidian theme of nothingness.*
 
 <br/>
 
@@ -39,17 +39,7 @@ Everything is hidden until you need it, visible only on hover.
 
 **Dynamic** — Status bars, sidebars, and tab headers fade in only when hovered.
 
-**Content First** — No borders, no shadows, no visual weight.
-
 <br/><br/><br/>
-
-### INSTALLATION
-
-**1\.** Move this theme folder to your obsidian vault’s `.obsidian/themes`.
-
-**2\.** Select **Superflat** in `Settings > Appearance > Themes`.
-
-<br/><br/><br/><br/>
 
 *Made with 🖤 by **ForeverWeLearn***
 
